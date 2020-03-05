@@ -2,6 +2,8 @@
 
 > Bayonet是整合多款安全工具并以web形式展现，它辅助渗透测试人员进行安全检查。工具大小一百多M，其中IP数据库占据大部分，代码量体积不大。
 
+> 请下载release版本，里面包含了ip数据库。
+
 ### 功能点
 
 - 子域名扫描：oneforall
@@ -23,6 +25,8 @@
 - 2、安装postgresql数据库，可将源换成国内源进行快速安装，完成后创建一个空数据库。
 
 - 3、安装chromium浏览器
+
+- 4、安装nmap
 ```
 sudo apt-get install chromium-browser
 ```
