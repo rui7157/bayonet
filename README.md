@@ -1,8 +1,6 @@
 ### 简介
 
-> Bayonet是整合多款安全工具并以web形式展现，它辅助渗透测试人员进行安全检查。工具大小一百多M，其中IP数据库占据大部分，代码量体积不大。
-
-> 请下载release版本，里面包含了ip数据库。
+> Bayonet是整合多款安全工具并以web形式展现，它辅助渗透测试人员对IT资产进行资产管理。
 
 > 遇到问题，请查看lssues是否有解决方案
 
@@ -28,17 +26,19 @@
 
 - 3、安装chromium浏览器
 
-- 4、安装nmap
 ```
 sudo apt-get install chromium-browser
 ```
+
+- 4、安装nmap
+
 
 ### 使用说明
 - 1、修改`config.py`和`db_config.py`文件，填入`数据库链接项`、`shodanapi项`,其他选项选填。注意shodanapi需填写在端口扫描配置项中。
 
 - 2、执行`python app.py`，开启web服务，若能正常访问说明数据库链接无误
 
-- 3、执行`python Run.py`，将会起四个进程分别启动子域名扫描、端口扫描、URL扫描、爬虫模块
+- 3、执行`python Run.py`，将会起四个进程分别启动子域名扫描、端口扫描、URL扫描、爬虫模块（推荐各个模块独立执行，这样互不干扰，也容易查看模块日志）
 
 - 4、进入`tools/scan/W13scan目录`，执行`python cli.py`开启被动漏洞扫描（w13scan未整合到项目中，故需手动执行）。以上操作可用`nohub`进行后台执行。
 
