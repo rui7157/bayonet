@@ -34,7 +34,7 @@ sudo apt-get install chromium-browser
 ```
 
 ### 使用说明
-- 1、修改`config.py`和`db_config.py`文件，填入`数据库链接项`、`shodanapi项`,其他选项选填。
+- 1、修改`config.py`和`db_config.py`文件，填入`数据库链接项`、`shodanapi项`,其他选项选填。注意shodanapi需填写在端口扫描配置项中。
 
 - 2、执行`python app.py`，开启web服务，若能正常访问说明数据库链接无误
 
@@ -67,7 +67,9 @@ $ docker exec -it 8223 bash  # 进入容器中 8223是容器ID：822374ab6f7d简
 
 # nohup python3 -u app.py > web.log 2>&1 &  # 后台启动web服务
 # nohup python3 -u Run.py > tools.log 2>&1 &  # 后台启动工具模块
-# nohup python3 -u tools/scan/W13SCAN/cli.py > w13scan.log 2>&1 &  # 后台启动w13scan
+
+# cd tools/scan/W13SCAN/
+# nohup python3 -u cli.py > w13scan.log 2>&1 &  # 后台启动w13scan
 
 访问本机地址: http://127.0.0.1:5000
 默认用户名密码：root/qazxsw@123
