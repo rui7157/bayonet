@@ -50,7 +50,7 @@ sudo apt-get install chromium-browser
 $ docker search bayonet  # 查看该项目docker镜像
 missfeng/bayonet    bayonet项目docker镜像
 
-$ docker pull missfeng/bayonet  # 拉取镜像
+$ docker pull missfeng/bayonet:v1.1  # 拉取镜像
 
 $ docker run -itd --name bayonet -p 5000:80 missfeng/bayonet:v1.1  # 后台启动容器
 
