@@ -62,7 +62,7 @@ def WritePorts(ip, subdomain, info_dict):
 
 def action(ip, subdomain):
     iplist = scan(ip, API)
-    if PortScan.async_scan:
+    if PortScan.async_scan and not iplist:
         iplist1 = socket_main(ip)
         iplist.extend(iplist1)
     if not iplist:

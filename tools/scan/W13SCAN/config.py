@@ -8,12 +8,17 @@
 
 SERVER_ADDR = ('127.0.0.1', 7778)  # 默认监听地址
 
-THREAD_NUM = 51  # 线程数量
+THREAD_NUM = 40  # 线程数量
 
 EXCLUDES = ["google\.", 'baidu\.com']  # 扫描排除网址(正则表达式)
 INCLUDES = [".*"]  # 扫描允许网址(正则表达式)
 
-EXCLUDE_PLUGINS = ['subdomain_found.py']  # 不使用的插件，文件名
+EXCLUDE_PLUGINS = ['subdomain_found.py', 'webpack.py', 'redirect.py', 'php_real_path.py', 'normal_page.py',
+                   'jsonp.py', 'js_sensitive_content.py', 'crlf.py', 'cors.py', 'cookie.py',
+                   'analyze_parameter.py', 'directory_browse.py', 'filescan.py', 'htaccess_file.py', 'JetBrans_IDEA.py',
+                   'phpinfo_craw.py', 'SFTP_Credentials_Exposure.py', 'backup_domain.py', 'common_set.py',
+                   'dzxss.py', 'errorpage.py', 'flashxss.py', 'http_smuggling.py', 'iis_parse.py', 'java_web.py',
+                   'post_xss.py', 'wordpress_backup.py']  # 不使用的插件，文件名
 INCLUDE_PLUGINS = ['all']  # 使用插件,文件名，all为全部
 
 RETRY = 2  # 超时重试次数

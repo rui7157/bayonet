@@ -5,7 +5,7 @@ import urllib3
 class BayonetConfig(object):
     '''Flask数据配置'''
     SECRET_KEY = 'a819f87b3e371a82dafb8c535c1242c9bba5e91da02ff1d87095367d1d4e188e'
-    SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:123456@127.0.0.1/bayonet'  # 数据库连接字符串
+    SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:qazxsw@123@127.0.0.1/bayonet'  # 数据库连接字符串
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     TITLE = 'Bayonet 资产管理系统'
 
@@ -205,7 +205,7 @@ class Oneforall:
 
 class PortScan:
     cdn_scan = True  # 不扫描识别为cdn的IP
-    shodan_api = 'xxxxx'  # shodan查询api
+    shodan_api = 'xxx'  # shodan查询api
     async_scan = False  # 是否开启常规端口服务探测
     async_scan_timeout = 30  # 异步端口扫描超时时间
     async_scan_threads = 500  # 异步协程数

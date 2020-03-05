@@ -8,7 +8,7 @@ from flask import escape
 from werkzeug.security import generate_password_hash
 import datetime
 
-SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:123456@127.0.0.1/bayonet'  # 数据库连接字符串
+SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:qazxsw@123@127.0.0.1/bayonet'  # 数据库连接字符串
 Base = declarative_base()
 
 class User(Base):

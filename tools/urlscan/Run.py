@@ -216,8 +216,9 @@ def sub_path_main(url):
     sucess = []
     for result in futures.as_completed(wait_for):
         response = result.result()
-        if response.status_code in UrlScan.success_status_code:
-            sucess.append(response)
+        if response:
+            if response.status_code in UrlScan.success_status_code:
+                sucess.append(response)
     sub_pool.shutdown()
     return sucess
 
