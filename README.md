@@ -44,6 +44,36 @@ sudo apt-get install chromium-browser
 
 - 5、查看web页面数据状态，等待扫描即可。注意`漏洞扫描需要去web页面的扫描任务管理手动开启`，这样做是为了不必要扫描不需要的子域名。
 
+### docker使用
+
+```
+$ docker search bayonet  # 查看该项目docker镜像
+missfeng/bayonet    bayonet项目docker镜像
+
+$ docker pull missfeng/bayonet  # 拉取镜像
+
+$ docker run -itd --name bayonet -p 5000:80 missfeng/bayonet:v1.1  # 后台启动容器
+
+$ docker ps  # 查看已启动的容器
+822374ab6f7d        bayonet:v1.1
+
+$ docker exec -it 8223 bash  # 进入容器中 8223是容器ID：822374ab6f7d简写
+
+# /etc/init.d/postgresql start  # 启动数据库
+
+# cd /root/bayonet/   # 进入项目目录
+
+# vim config.py   # 编辑配置文件，找到 shodan_api，填入该参数值；其他配置可自己配置
+
+# nohup python3 -u app.py > web.log 2>&1 &  # 后台启动web服务
+# nohup python3 -u Run.py > tools.log 2>&1 &  # 后台启动工具模块
+# nohup python3 -u tools/scan/W13SCAN/cli.py > w13scan.log 2>&1 &  # 后台启动w13scan
+
+访问本机地址: http://127.0.0.1:5000
+默认用户名密码：root/qazxsw@123
+```
+
+
 ### 更新日志
 
 ##### 2020年3月04日
