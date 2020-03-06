@@ -28,6 +28,7 @@ else:
 
 def ReadSubDomain():
     '''读取子域名任务'''
+	DB.session.commit()
     if PortScan.cdn_scan:
         sql_subdomain = SrcSubDomain.query.filter(SrcSubDomain.flag == False, SrcSubDomain.cdn == False).first()
     else:
