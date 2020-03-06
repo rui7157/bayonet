@@ -8,7 +8,7 @@ from tools.oneforall.oneforall import OneForAll
 
 def ReadDomain():
     '''读取主域名任务'''
-	DB.session.commit()
+    DB.session.commit()
     results = SrcDomain.query.filter(SrcDomain.flag != '子域名扫描完成').first()
     if results:
         results.flag = '子域名扫描中'

@@ -30,7 +30,7 @@ LOCK = threading.RLock()
 
 def ReadPort():
     '''读取ports表任务'''
-	DB.session.commit()
+    DB.session.commit()
     sql_ports_list = SrcPorts.query.filter(SrcPorts.flag == False).limit(UrlScan.threads).all()
     return sql_ports_list
 

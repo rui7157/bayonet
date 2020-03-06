@@ -19,7 +19,7 @@ crawlergo_path = str(pathlib.Path(__file__).parent.joinpath('crawlergo').resolve
 
 def ReadUrl():
     '''读取url任务, 一次读取一条记录'''
-	DB.session.commit()
+    DB.session.commit()
     sql_url = SrcUrls.query.filter(SrcUrls.flag == True).first()
     return sql_url
 
