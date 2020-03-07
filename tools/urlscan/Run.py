@@ -30,14 +30,15 @@ LOCK = threading.RLock()
 
 def ReadPort():
     '''读取ports表任务'''
-    DB.session.commit()
     sql_ports_list = SrcPorts.query.filter(SrcPorts.flag == False).limit(UrlScan.threads).all()
+    DB.session.commit()
     return sql_ports_list
 
 def WritePort(sql_ports):
     '''修改ports表任务'''
     LOCK.acquire()
     sql = SrcPorts.query.filter(SrcPorts.id == sql_ports.id).first()
+    DB.session.commit()
     if not sql:
         logger.log('ALERT', f'更新端口信息{sql_ports.id}不存在')
         return

@@ -11,7 +11,7 @@ def Nmap_Portscan(ip, port_info_list): # Nmap扫描
         logger.log('ERROR', f'nmap程序未找到:{e}')
         return None
     ports = ','.join([str(tmp) for tmp in port_info_list])
-    nm.scan(hosts=ip, ports=ports, arguments='-sV -Pn')
+    nm.scan(hosts=ip, ports=ports, arguments='-Pn -T 4 -sV --version-intensity=3')
     try:
         port_list = nm[ip]['tcp'].keys()
     except Exception as e:

@@ -28,16 +28,17 @@ else:
 
 def ReadSubDomain():
     '''读取子域名任务'''
-    DB.session.commit()
     if PortScan.cdn_scan:
         sql_subdomain = SrcSubDomain.query.filter(SrcSubDomain.flag == False, SrcSubDomain.cdn == False).first()
     else:
         sql_subdomain = SrcSubDomain.query.filter(SrcSubDomain.flag == False).first()
+    DB.session.commit()
     return sql_subdomain
 
 def WriteSubDomain(results):
     '''修改子域名任务状态'''
     sql_subdomain = SrcSubDomain.query.filter(SrcSubDomain.subdomain_ip == results.subdomain_ip).all()
+    DB.session.commit()
     if sql_subdomain:
         for tmp in sql_subdomain:
             tmp.flag = True
